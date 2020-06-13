@@ -15,6 +15,7 @@ $User = Config::getObject('core.user.class');
       <th scope="col">Логин</th>
       <th scope="col">Email</th>
       <th scope="col">Зарегистрирован</th>
+      <th scope="col">Статус</th>
       <th scope="col"></th>
     </tr>
      </thead>
@@ -25,6 +26,7 @@ $User = Config::getObject('core.user.class');
         <td> <?= $user->login ?> </td>
         <td>  <?= $user->email ?> </td>
         <td>  <?= $user->timestamp ?> </td>
+        <td>  <?= $user->role ?> </td>
         <td>  <?= $User->returnIfAllowed("admin/adminusers/edit", 
                     "<a href=" . \ItForFree\SimpleMVC\Url::link("admin/adminusers/edit&id=". $user->id) 
                     . ">[Редактировать]</a>");?></td>

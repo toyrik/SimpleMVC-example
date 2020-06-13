@@ -6,14 +6,16 @@ $User = Config::getObject('core.user.class');
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="ru">
     <?php include('includes/main/head.php'); ?>
-    <body> 
-        <?php include('includes/main/nav.php'); ?>
+    <body>
         <div class="container">
+            <?php include('includes/main/nav.php'); ?>
             <?= $CONTENT_DATA ?>
+
+            <?php include('includes/main/footer.php'); ?>
         </div>
-        <?php include('includes/main/footer.php'); ?>
+
     </body>
 </html>
 

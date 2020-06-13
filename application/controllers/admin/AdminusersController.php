@@ -35,7 +35,7 @@ class AdminusersController extends \ItForFree\SimpleMVC\mvc\Controller
     }
 
     /**
-     * Выводит на экран форму для создания новой статьи (только для Администратора)
+     * Выводит на экран форму для создания нового пользователя (только для Администратора)
      */
     public function addAction()
     {
@@ -60,7 +60,7 @@ class AdminusersController extends \ItForFree\SimpleMVC\mvc\Controller
     }
     
     /**
-     * Выводит на экран форму для редактирования статьи (только для Администратора)
+     * Выводит на экран форму для редактирования пользователя (только для Администратора)
      */
     public function editAction()
     {

@@ -1,11 +1,12 @@
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SimpleMVC | Учебный проект</title>
 
-    <link rel="stylesheet" type="text/css" href="/CSS/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 
-    <script src="/JS/jquery-3.2.1.js"></script>
-    <script src="/JS/popper.js"></script>
-    <script src="/JS/bootstrap.js"></script>
+    <script src="/js/jquery-3.2.1.js"></script>
+    <script src="/js/popper.js"></script>
+    <script src="/js/bootstrap.js"></script>
 </head>
