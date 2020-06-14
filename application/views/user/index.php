@@ -1,5 +1,6 @@
 <?php 
 use ItForFree\SimpleMVC\Config;
+use ItForFree\SimpleMVC\Url;
 
 $User = Config::getObject('core.user.class');
 ?>
@@ -16,20 +17,23 @@ $User = Config::getObject('core.user.class');
       <th scope="col">Email</th>
       <th scope="col">Зарегистрирован</th>
       <th scope="col">Статус</th>
-      <th scope="col"></th>
+      <th colspan="2" scope="col">Действия</th>
     </tr>
      </thead>
     <tbody>
     <?php foreach($users as $user): ?>
-    <tr>
+    <tr class="pointer" onclick="location='<?php echo Url::link('admin/adminusers/index&id=' . $user->id) ?>'">
         <td> <?= $user->id ?> </td>
         <td> <?= $user->login ?> </td>
         <td>  <?= $user->email ?> </td>
         <td>  <?= $user->timestamp ?> </td>
         <td>  <?= $user->role ?> </td>
         <td>  <?= $User->returnIfAllowed("admin/adminusers/edit", 
-                    "<a href=" . \ItForFree\SimpleMVC\Url::link("admin/adminusers/edit&id=". $user->id) 
+                    "<a href=" . Url::link("admin/adminusers/edit&id=". $user->id) 
                     . ">[Редактировать]</a>");?></td>
+        <td> <?= $User->returnIfAllowed("admin/adminusers/delete", 
+                    "<a href=" . Url::link("admin/adminusers/delete&id=". $user->id) 
+                    . ">[Удалить]</a>");?></td>
     </tr>
     <?php endforeach; ?>
     

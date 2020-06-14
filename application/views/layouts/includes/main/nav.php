@@ -11,7 +11,7 @@ $User = Config::getObject('core.user.class');
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- Меню оформленное с помощью  twitter bootstrap -->
- <a class="navbar-brand" href="#" title="aka Самый Лучший Сайт ;)">SimpleMVC</a>
+ <a class="navbar-brand" href="/" title="aka Самый Лучший Сайт ;)">SimpleMVC</a>
  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
  </button>
@@ -30,6 +30,13 @@ $User = Config::getObject('core.user.class');
             <a class="nav-link" href="<?= Url::link("admin/adminusers/index") ?>"> Пользователи </a>
         </li>
         <?php endif; ?>
+        
+        <?php  if ($User->isAllowed("admin/category/index")): ?>
+        <li class="nav-item ">
+            <a class="nav-link" href="<?= Url::link("admin/category/index") ?>"> Категории </a>
+        </li>
+        <?php endif; ?>
+        
         
         <?php  if ($User->isAllowed("login/logout")): ?>
         <li class="nav-item ">

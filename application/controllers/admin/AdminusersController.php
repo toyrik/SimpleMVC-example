@@ -107,7 +107,7 @@ class AdminusersController extends \ItForFree\SimpleMVC\mvc\Controller
                 $newAdminusers = $Adminusers->loadFromArray($_POST);
                 $newAdminusers->delete();
                 
-                $this->redirect($Url::link("archive/allUsers"));
+                $this->redirect($Url::link("admin/adminusers/index"));
               
             }
             elseif (!empty($_POST['cancel'])) {
@@ -118,7 +118,7 @@ class AdminusersController extends \ItForFree\SimpleMVC\mvc\Controller
             
             $Adminusers = new Adminusers();
             $deletedAdminusers = $Adminusers->getById($id);
-            $deleteAdminusersTitle = "Удаление статьи";
+            $deleteAdminusersTitle = "Удаление пользователя";
             
             $this->view->addVar('deleteAdminusersTitle', $deleteAdminusersTitle);
             $this->view->addVar('deletedAdminusers', $deletedAdminusers);
