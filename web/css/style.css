@@ -361,4 +361,11 @@ ul.ajax-load li {
     padding: 3px; /* Поля вокруг текста */
     font-size: 12px;
 }
-        
+
+.main-nav {
+    width: 100%;
+}
+
+.main-nav>.user {
+    margin-left: auto; 
+}
