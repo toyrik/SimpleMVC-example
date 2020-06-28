@@ -9,7 +9,7 @@ $Url = Config::getObject('core.url.class');
 <h2><?= $deleteCategoryTitle ?></h2>
 
 <form method="post" action="<?= $Url::link("admin/category/delete&id=". $_GET['id'])?>" >
-    Вы уверены, что хотите удалить категорию <?=$deleteCategory->name?>?
+    <div class="card-title">Вы уверены, что хотите удалить категорию <strong><?=$deleteCategory->name?></strong>?</div>
     
     <input type="hidden" name="id" value="<?= $deleteCategory->id ?>">
     <input type="submit" name="deleteCategory" value="Удалить">

@@ -4,8 +4,6 @@ namespace application\controllers\admin;
 use application\models\Category;
 use ItForFree\SimpleMVC\Config;
 
-
-
 class CategoryController extends \ItForFree\SimpleMVC\mvc\Controller
 {
     public $layoutPath = 'admin-main.php';
