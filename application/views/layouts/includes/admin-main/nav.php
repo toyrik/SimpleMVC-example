@@ -33,6 +33,12 @@ $User = Config::getObject('core.user.class');
                 <a class="nav-link" href="<?= Url::link("admin/subcategory/index") ?>"> Подкатегории </a>
             </li>
         <?php endif; ?>
+            
+        <?php  if ($User->isAllowed("admin/article/index")): ?>
+            <li class="nav-item ">
+                <a class="nav-link" href="<?= Url::link("admin/article/index") ?>"> Статьи </a>
+            </li>
+        <?php endif; ?>
         
     </ul>
    </div>

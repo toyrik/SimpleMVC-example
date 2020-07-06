@@ -3,9 +3,6 @@ use ItForFree\SimpleMVC\Config;
 use ItForFree\SimpleMVC\Url;
 
 $User = Config::getObject('core.user.class');
-
-
-//vpre($User->explainAccess("admin/category/index"));
 ?>
 
 <ul class="nav">

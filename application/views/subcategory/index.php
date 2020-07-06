@@ -36,12 +36,6 @@ include 'includes/admin-subcategory-nav.php';
     
     </tbody>
 </table>
-<?php
-//echo '<pre>';
-//print_r($categories);
-//print_r($subcategories);
-//echo '</pre>';
-?>
 
 <?php else:?>
     <p> Список подкатегорий пуст. </p>

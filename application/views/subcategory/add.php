@@ -17,13 +17,6 @@
             <option value="<?= $category->id ?>"><?= $category->name ?></option>
         <?php } ?>
         </select>
-        
-<?php
-//echo '<pre>';
-//print_r($categories);
-////print_r($subcategories);
-//echo '</pre>';
-?>
     </div>
 
     <input type="submit" class="btn btn-primary" name="saveNewSubcategory" value="Сохранить">
