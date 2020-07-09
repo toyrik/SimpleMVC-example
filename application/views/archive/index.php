@@ -1,13 +1,22 @@
 <div class="row">
-    <div class="col "><h1><?php use ItForFree\SimpleMVC\Url; echo $homepageTitle ?></h1>
+    <div class="col "><h1><?php use ItForFree\SimpleMVC\Url;
+            echo $homepageTitle ?></h1>
         </div>
 </div>
 <div class="row">
     <div class="col ">
-      <p class="lead"> Добро пожаловать в SimpleMVC! </p>
+      <p class="lead"><?=$lead?></p>
     </div>
+    <?php if (isset($description)) { ?>
+    <div class="card" style="width: 100%; min-width: 320px">
+        <div class="card-body">
+            <p><?= $description ?></p>
+        </div>
+    </div>
+    <?php } ?>
 </div>
 
+<?php //vdie($articles);?>
 <ul id="headlines">
     <?php foreach ($articles as $Article) { ?>
         <li class="article<?= $Article->id?>">
@@ -38,15 +47,13 @@
                 <?php }
                 else { ?>
                     <span class="category">
-                        <a href=".?route=archive/category&amp;id=0">Без категорий</a>
+                        <a href="<?= Url::link('archive/category&id=0') ?>">Без категорий</a>
                     </span>
                 <?php } ?>
                 <button class="btn-show-author btn btn-sm btn-primary" data-articleId="<?= $Article->id?>">Show authors</button>
                 <span class="category hidden" id="authors<?= $Article->id?>"></span>
             </h3>
-            <p class="summary"><?php
-                $position = mb_strlen($Article->content) > $contentFirstSymbols ?  mb_strpos($Article->content, ' ', $contentFirstSymbols) : $contentFirstSymbols;
-                echo htmlspecialchars(mb_substr($Article->content, 0, $position) . '...')?></p>
+            <p class="summary"><?= $Article->summary ?></p>
 
             <ul class="ajax-load">
                 <li><a href="<?= Url::link('archive/article&id=' . $Article->id)?>" class="ajaxArticleBodyByPost" data-contentId="<?= $Article->id?>">Показать продолжение (POST)</a></li>

@@ -4,7 +4,7 @@ namespace application\models;
 use PDO;
 
 
-class Subcategory extends BaseExampleModel
+class Subcategory extends Category
 {   
     /**
      * @var string Имя обрабатываемой таблицы 
@@ -63,5 +63,18 @@ class Subcategory extends BaseExampleModel
         $st->bindValue(":description", $this->description, PDO::PARAM_STR);
         $st->bindValue(":categoryId", $this->categoryId, PDO::PARAM_INT);
         $st->execute();
+    }
+    
+     public function getListShort()
+    {
+        $sql = "SELECT SQL_CALC_FOUND_ROWS $this->tableName.id, $this->tableName.name, categoryId," .
+            "categories.name AS categoryName FROM subcategory " .
+            "LEFT JOIN categories ON $this->tableName.categoryId = categories.id ORDER BY categoryId";
+
+        $st = $this->pdo->prepare( $sql );
+        $st->execute();
+        $list = $st->fetchAll(\PDO::FETCH_ASSOC);
+
+        return $list;
     }
 }

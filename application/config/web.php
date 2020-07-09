@@ -28,7 +28,12 @@ $config = [
         ],
         'session' => [
             'class' => ItForFree\SimpleMVC\Session::class
-        ]
+        ],
+        
+        'home' => [
+            'firstContent' => 50,
+            'NumArticles' => 5,
+        ],
     ]    
 ];
 

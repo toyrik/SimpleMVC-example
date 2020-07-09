@@ -15,7 +15,7 @@
         <label for="password" >Введите пароль</label>
         <input type="password" name="password"  class="form-control" id="userName"  name="userName" >
     </div>
-    <input type="submit" class="btn btn-primary" name="login" value="Сохранить">
+    <input type="submit" class="btn btn-primary" name="login" value="Войти">
    
 </form>
 

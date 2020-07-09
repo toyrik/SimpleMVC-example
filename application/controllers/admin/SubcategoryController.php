@@ -26,9 +26,7 @@ class SubcategoryController extends \ItForFree\SimpleMVC\mvc\Controller
             $this->view->render('subcategory/view-item.php');
         }else{
             $subcategories = $Subcategory->getList()['results'];
-            $category = new Category();
-            $data = $category->getListAssoc();
-            $categories = $data['results'];
+            $categories = Category::getListAssoc();
             $this->view->addVar('subcategories', $subcategories);
             $this->view->addVar('categories', $categories);
             $this->view->render('subcategory/index.php');

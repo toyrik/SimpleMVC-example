@@ -61,15 +61,16 @@ class Category extends BaseExampleModel
         $st->execute();
     }
     
-    public function getListAssoc()
+    public static function getListAssoc()
     {
-        $sql = "SELECT id, name FROM $this->tableName ORDER BY $this->orderBy";
+        $thisEl = new static();
+        $sql = "SELECT id, name FROM $thisEl->tableName ORDER BY $thisEl->orderBy";
         
-        $st = $this->pdo->prepare($sql);
+        $st = $thisEl->pdo->prepare($sql);
         $st->execute();
         $list = $st->fetchAll(\PDO::FETCH_KEY_PAIR);
         
-        return (array ("results" => $list));
+        return $list;
         
     }
 }
